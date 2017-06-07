@@ -1,5 +1,5 @@
 import scrapy
-from scrapy.loader import ItemLoader 
+from scrapy.loader import ItemLoader
 from crawl3.items import ImageItem
 
 class RosiSpider(scrapy.Spider):
@@ -28,8 +28,8 @@ class RosiSpider(scrapy.Spider):
     def parse_item(self, response):
         il = ItemLoader(item=ImageItem(), response=response)
         il.add_css('image_urls', 'img::attr(src)')
+        il.add_css('image_urls', 'a::attr(href)')
         return il.load_item()
 
     def errback(self, failure):
         pass
-

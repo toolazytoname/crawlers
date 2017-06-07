@@ -69,8 +69,8 @@ ITEM_PIPELINES = {
     #'scrapy.pipelines.images.ImagesPipeline': 1,
     'crawl3.pipelines.MyImagesPipeline': 1,
 }
-
-IMAGES_STORE = '/data/rosi/'
+IMAGES_STORE = '/Users/weichao/data/rosi/'
+# IMAGES_STORE = '~/data/rosi/'
 IMAGES_URLS_FIELD = 'image_urls'
 IMAGES_RESULT_FIELD = 'images'
 

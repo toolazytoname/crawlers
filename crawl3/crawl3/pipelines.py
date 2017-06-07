@@ -15,7 +15,7 @@ class MyImagesPipeline(ImagesPipeline):
     def get_media_requests(self, item, info):
         #import pdb;pdb.set_trace()
         for image_url in item['image_urls']:
-            if 'tu.68flash.com' not in image_url:
+            if 'http://' not in image_url:
                 continue
             yield scrapy.Request(image_url.strip())
 
@@ -25,4 +25,3 @@ class MyImagesPipeline(ImagesPipeline):
             raise DropItem("Item contains no images")
         item['image_paths'] = image_paths
         return item
-
